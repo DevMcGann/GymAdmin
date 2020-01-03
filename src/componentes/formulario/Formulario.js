@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import clienteAxios from '../../axios';
+import './formulario.css'
 
 class Formulario extends Component {
     state = {
@@ -53,8 +54,10 @@ class Formulario extends Component {
 
                     <p>Observaciones</p>
                     <textarea name="observaciones" rows="10" cols="30" onChange={this.handleChange}></textarea>   
+
+                    <h3 onClick={this.handleSubmit}>Agregar Cliente</h3>
                 </form>
-                <input type="button" value="Enviar"  onClick={this.handleSubmit}/>
+                
             </div>
          );
     }

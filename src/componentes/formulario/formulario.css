@@ -1,0 +1,48 @@
+.formulario-container{
+    color:white;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.formulario-container h1 {
+    margin-top: 20px;
+    color:green;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+    padding:20px;
+}
+
+.formulario input {
+    min-width: 500px;
+    min-height: 30px;
+    text-align: center;
+}
+
+.formulario p {
+    color:orange;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.formulario h3 {
+    color:green;
+    background-color:purple;
+    border: 3px solid purple;
+    border-radius: 50px;
+}
+
+.formulario h3:hover{
+    color:orange;
+    cursor: pointer;
+}
