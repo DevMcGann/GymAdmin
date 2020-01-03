@@ -5,17 +5,39 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const isDev = require('electron-is-dev');
 
+
+/* servidor */
 const express = require('express')
 const server = express();
 const cors = require('cors')
+const mongoose = require('mongoose')
+const routes = require('./rutas');
+const bodyParser = require('body-parser');
+
+
+// conectar mongo
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://localhost/gym' , {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
 server.use(cors())
-server.get('/mensaje', function (req, res) {
-  //res.json({mensaje:'Buenas'})
-  res.send("hola")
-})
+
+// habilitar bodyparser
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({extended: true}));
+
+
+// Rutas de la app
+server.use('/', routes());
+
+// carpeta publica
+server.use(express.static('uploads'));
 
 server.listen(5000, () => console.log(`Example app listening on port 5000!`))
-
+/* Fin Servidor */
 
 
 let mainWindow;
