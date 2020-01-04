@@ -3,16 +3,15 @@ import './App.css';
 
 
 //componentes
-import Formulario from './componentes/formulario/Formulario'
+
+import MainScreen from './componentes/mainScreen/MainScreen';
 
 
 function App() {
 
   return (
     <div className="App">
-
-      
-      <Formulario/>
+      <MainScreen />
     </div>
   );
 }
