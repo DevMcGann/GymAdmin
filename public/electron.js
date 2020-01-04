@@ -43,7 +43,7 @@ server.listen(5000, () => console.log(`Example app listening on port 5000!`))
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 900, height: 680 , webPreferences: {
+  mainWindow = new BrowserWindow({width: 1200, height: 1000 , webPreferences: {
     nodeIntegration: true
   }});
   mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);

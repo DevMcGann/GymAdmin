@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar'
 import './mainscreen.css'
 
 
+
 const MainScreen = () => {
     return ( 
 
@@ -10,6 +11,8 @@ const MainScreen = () => {
             <section className="navbar">
                 <Navbar />
             </section>
+
+            
         </div>
      );
 }

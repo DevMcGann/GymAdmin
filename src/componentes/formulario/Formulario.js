@@ -34,13 +34,18 @@ class Formulario extends Component {
     } catch (error) {
          alert("Error al insertar Cliente")
      }
+     this.props.history.push("/")
      }
 
+     volver=e=>{
+         this.props.history.push("/")
+     }
 
     render() { 
         return ( 
             <div className="formulario-container">
                 <h1>Nuevo Cliente</h1>
+                <h3 onClick={this.volver}>Volver</h3>
                 <form  className="formulario">
                     
                     <p>Nombre</p>
