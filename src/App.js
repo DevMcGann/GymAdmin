@@ -9,6 +9,7 @@ import Buscar from './componentes/buscar/Buscar';
 import Deuda_Vencida from './componentes/deuda_vencida/Deuda_Vencida';
 import Staff from './componentes/staff/Staff';
 import Acerca_De from './componentes/acerca_de/Acerca_De'
+import ClienteScreen from './componentes/clienteScreen/ClienteScreen';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/deuda_vencida" exact component={Deuda_Vencida} />
           <Route path="/staff" exact component={Staff} />
           <Route path="/acerca" exact component={Acerca_De} />
+          <Route path="/cliente/:dni" exact component={ClienteScreen} />
         </Switch>
       </Router>
     </div>

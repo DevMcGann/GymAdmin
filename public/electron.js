@@ -50,9 +50,13 @@ function createWindow() {
   if (isDev) {
     // Open the DevTools.
     //BrowserWindow.addDevToolsExtension('<location to your react chrome extension>');
-    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
   }
   mainWindow.on('closed', () => mainWindow = null);
+  mainWindow.setResizable(true)
+  mainWindow.setFullScreen(false)
+  mainWindow.setMenu(null)
+
 }
 
 app.on('ready', createWindow);

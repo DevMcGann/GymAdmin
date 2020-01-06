@@ -1,0 +1,36 @@
+li {
+    list-style: none;
+    border: 3px solid green;
+    margin-bottom: 10px;
+}
+
+li:hover{
+    background-color: rgba(48, 7, 7, 0.918);
+    cursor: pointer;
+}
+
+li a{
+    text-decoration: none;
+    color:white
+}
+
+
+.clientemin{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5px;
+    
+}
+
+.foto img{
+    flex:1;
+    justify-content: flex-start;
+    max-height: 50px;
+    max-width: 50px;
+    border-radius: 50px;
+}
+
+.datos{
+    flex:.5;
+}
