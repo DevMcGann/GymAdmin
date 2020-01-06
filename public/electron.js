@@ -6,13 +6,14 @@ const path = require('path');
 const isDev = require('electron-is-dev');
 
 
-/* servidor */
+/************************************************** */ //servidor /**//////////////////////
 const express = require('express')
 const server = express();
 const cors = require('cors')
 const mongoose = require('mongoose')
 const routes = require('./rutas');
 const bodyParser = require('body-parser');
+const multer = require('multer')
 
 
 // conectar mongo
@@ -34,12 +35,33 @@ server.use(bodyParser.urlencoded({extended: true}));
 server.use('/', routes());
 
 // carpeta publica
-server.use(express.static('uploads'));
+server.use(express.static(__dirname + '/public/uploads'));
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+      cb(null, 'uploads/');
+  },
+
+  // By default, multer removes file extensions so let's add them back
+  filename: function(req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
 
 server.listen(5000, () => console.log(`Example app listening on port 5000!`))
 /* Fin Servidor */
 
 
+
+
+
+
+
+
+
+
+
+/******************************************************************************************** */
 let mainWindow;
 
 function createWindow() {

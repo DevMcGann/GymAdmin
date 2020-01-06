@@ -28,6 +28,9 @@ const clienteSchema = new Schema({
     deudor:{
         type:Boolean,
         default:false
+    },
+    imagen:{
+        type:String
     }
 });
 
